@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>canvas</title>
+	<script type="text/javascript">
+		var canvas;
+		var context;
+		var isPaint = false;
+		window.onload = function(){
+			canvas = document.getElementById("mycanvas");
+			context = canvas.getContext("2d");
+		}
+		function mdh(e) { //when mouse clicks
+			var x = e.clientX;
+			var y = e.clientY;
+			context.beginPath();
+			context.lineWidth = 12;
+			context.strokeStyle = "white";
+			context.moveTo(x, y);
+			isPaint = true;
+		}
+		function mmh(e) { //when mouse moves
+			if (isPaint) {
+				var x = e.clientX;
+				var y = e.clientY;
+				context.lineTo(x,y);
+				context.stroke();
+			}
+		}
+		function muh(e) { //when mouse release
+			isPaint = false;
+		}
+		function clear(e){ //when press clear button
+			context.clearRect(0,0, canvas.width, canvas.height);
+		}
+	</script>
+</head>
+<body>
+<canvas id="mycanvas" width="1000" height="1000"
+		onmousedown="mdh(event)"
+		onmousemove="mmh(event)"
+		onmouseup="muh(event)"
+		style="cursor: pointer; background: black"></canvas>
+<hr>
+<button onclick="clear()" style="width: 300px">clear</button>
+</body>
+</html>

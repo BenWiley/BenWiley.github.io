@@ -1,0 +1,22 @@
+<html>
+<head>
+	<title>DOM</title>
+</head>
+<body>
+	<form name="form" iD="form">
+		名字:
+		<input type="text" name="name" id="name">
+		Email:
+		<input type="text" name="email" id="email">
+
+		<input type="button" name="send" value="send" onclick="DOM()">
+	</form>
+	<script type="text/javascript">
+		function DOM() {
+			var name = document.getElementById("name").value;
+			var email = document.getElementById("email").value;
+			alert("Your name is:" + name +"\nEmail is:" +email);
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<html>
+<head>
+	<title>circle0</title>
+	<style type="text/css">
+		canvas { border: 1px solid black }
+	</style>
+</head>
+<body>
+	<canvas id="ican" width="1000" height="1200 m"></canvas>
+		<script type="text/javascript">
+		var getcan = document.getElementById('ican').getContext("2d");
+		getcan.beginPath();
+		getcan.fillStyle = "rgba(0,230,0,0.3)";
+		getcan.arc(200,150,50,0,5);
+		getcan.fillStyle = "rgba(0,230,0,0.3)";
+		getcan.fillRect(200,150,50, 100);
+		getcan.fillStyle = "rgba(100,22,33,0.100)";
+		getcan.fillRect(350,400,50, 100);
+		getcan.stroke();
+
+		</script>
+</body>
+</html>
